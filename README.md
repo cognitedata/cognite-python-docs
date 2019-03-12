@@ -21,11 +21,11 @@ You may also want to take a look at the documentation for the the API
 Examples
 --------
 
-### [Basics](examples/basics/README.md)
+### [Basics](examples/basics)
 
 A collection of simple examples to get you started with CDP.
 
-### [Model Hosting](examples/model_hosting/README.md)
+### [Model Hosting](examples/model_hosting)
 
 A collection of Jupyter notebooks showing how to use the model hosting environment.
 
