@@ -5,7 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 scipy = ">=0.13.3"
-scikit-learn = ">0.19"
+scikit-learn = "==0.20.3"
 pandas = ">=0.23"
 numpy = ">=1.8.2"
 cognite-model-hosting = "*"
@@ -19,9 +19,6 @@ black = "*"
 isort = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
-
-[requires]
-python_version = "3.7"
 
 [pipenv]
 allow_prereleases = true

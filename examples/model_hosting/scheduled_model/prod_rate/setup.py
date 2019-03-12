@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 # It's important to specify all dependencies on external packages,
 # so that these can be installed.
-REQUIRED_PACKAGES = ["scikit-learn==0.19.1", "numpy>=1.8.2", "scipy>=0.13.3", "cognite-model-hosting"]
+REQUIRED_PACKAGES = ["scikit-learn==0.20.3", "numpy>=1.8.2", "scipy>=0.13.3", "cognite-model-hosting"]
 
 setup(
     name="prod-rate",
