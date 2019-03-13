@@ -105,3 +105,6 @@ venv.bak/
 
 # jetbrains
 .idea/
+
+# artifacts directories created when training
+artifacts

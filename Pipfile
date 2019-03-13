@@ -19,6 +19,8 @@ black = "*"
 isort = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
+cognite-model-hosting = "*"
+cognite-model-hosting-notebook = "*"
 
 [pipenv]
 allow_prereleases = true
