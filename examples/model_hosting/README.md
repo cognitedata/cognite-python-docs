@@ -16,7 +16,7 @@ This example shows a source package for applying a trivial transformation to two
 run this transformation on incoming data every minute. This example is a good place to get comfortable with how the 
 hosting environment works.
 
-### [Deployiing and scheduling a pretrained model](scheduled_model/ScheduledPrediction.ipynb)
+### [Deploying and scheduling a pretrained model](scheduled_model/ScheduledPrediction.ipynb)
 
 This example is a slightly more complex version of the simple function example. We will still be scheduling a 
 transformation on some time series data, but we will do so using a model we train locally and upload to the hosting 
