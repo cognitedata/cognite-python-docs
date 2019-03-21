@@ -19,8 +19,8 @@ downloading the specified data.
 
 More information on the hosting environment can be found `here <https://doc.cognitedata.com/concepts/#cognite-model-hosting>`_.
 
-`Model Hosting Notebook Integration <https://cognite-docs.readthedocs-hosted.com/projects/cognite-notebook/en/latest/>`_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`Model Hosting Notebook Integration <https://cognite-docs.readthedocs-hosted.com/projects/cognite-model-hosting-notebook/en/latest/>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This library provides a way for users of the Model Hosting Environment to deploy code to production
 directly from a Jupyter Notebook.
 
