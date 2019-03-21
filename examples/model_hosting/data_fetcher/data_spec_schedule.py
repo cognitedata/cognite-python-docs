@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 
 from cognite.model_hosting.data_fetcher import DataFetcher
 from cognite.model_hosting.data_spec import *
@@ -28,16 +29,15 @@ schedule_data_spec = ScheduleDataSpec(
     output=ScheduleOutputSpec({"transformed": ScheduleOutputTimeSeriesSpec(123)}),
     window_size="1h",  # This means we will feed our model with one minute of data every time it is run.
     stride="1h",  # This means our schedule will run once a minute.
-    start="10d-ago",
+    start=datetime(2019, 1, 1),
 )
 
 # Now we can use this method to get the data specs that our model would be fed 10 days ago.
 # This will yield 24 data specs.
 
-data_specs = schedule_data_spec.get_instances(start="10d-ago", end="9d-ago")
+data_specs = schedule_data_spec.get_instances(start=datetime(2019, 1, 10), end=datetime(2019, 1, 11))
 
-# We can feed these data_specs to a DataFetcher and see exactly what data our model would receive 10 days ago for the
-# "gas_auto" time series
+# We can feed these data_specs to a DataFetcher and see exactly what data our model would receive on the 10th of January
 first_data_spec = data_specs[0]
 data_fetcher = DataFetcher(first_data_spec, api_key=os.getenv("COGNITE_OID_API_KEY"), project="publicdata")
 print(data_fetcher.time_series.fetch_datapoints("gas_auto").head())
