@@ -3,9 +3,6 @@ Cognite Python Documentation
 ============================
 Documentation for packages used to interact with Cognite Data Platform (CDP)
 
-.. contents::
-    :local:
-
 `Software Development Kit <https://cognite-docs.readthedocs-hosted.com/projects/cognite-sdk-python/en/latest/>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This package provides an interface to CDP in Python which is tightly integrated with Pandas.
