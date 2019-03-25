@@ -3,6 +3,7 @@ scikit-learn==0.20.3
 pandas>=0.23
 numpy>=1.8.2
 cognite-model-hosting
+cognite-model-hosting-notebook
 cognite-sdk
 matplotlib
 jupyter
