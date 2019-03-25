@@ -8,6 +8,23 @@ Model Hosting Examples
 ## Prerequisites
 In order to start using these examples, you need to be using Python 3.5.0
 
+You also need to install the dependencies required to run through the examples.
+You can do this using pip (requirements.txt) or [pipenv](https://pipenv.readthedocs.io/en/latest/).
+
+Navigate to the root directory of this repository and use one of the following methods to install the requirements.
+
+#### Using requirements.txt
+```bash
+$ pip install -r requirements.txt
+``` 
+
+#### Using Pipenv
+```bash
+$ pipenv shell
+$ pipenv sync --dev
+```
+
+
 ## Examples
 
 ### [Deploying and scheduling a simple function](simple_function/SimpleFunction.ipynb)
