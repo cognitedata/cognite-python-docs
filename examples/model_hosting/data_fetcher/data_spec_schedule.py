@@ -15,12 +15,8 @@ id_of_output_timeseries = 123
 schedule_data_spec = ScheduleDataSpec(
     input=ScheduleInputSpec(
         time_series={
-            "gas_auto": ScheduleInputTimeSeriesSpec(
-                5168669678602879, aggregate=aggregate, granularity=granularity
-            ),
-            "gas_external": ScheduleInputTimeSeriesSpec(
-                6811013084414704, aggregate=aggregate, granularity=granularity
-            ),
+            "gas_auto": ScheduleInputTimeSeriesSpec(5168669678602879, aggregate=aggregate, granularity=granularity),
+            "gas_external": ScheduleInputTimeSeriesSpec(6811013084414704, aggregate=aggregate, granularity=granularity),
             "gas_delta_time": ScheduleInputTimeSeriesSpec(
                 6894532287305357, aggregate=aggregate, granularity=granularity
             ),
@@ -39,13 +35,9 @@ schedule_data_spec = ScheduleDataSpec(
 # Now we get the data specs that our model would be fed on the 10th of January
 # This will return 24 data specs, since the stride is set to 1 hour. Stride set to 8 hours would return 3 data specs.
 
-data_specs = schedule_data_spec.get_instances(
-    start=datetime(2019, 1, 10), end=datetime(2019, 1, 11)
-)
+data_specs = schedule_data_spec.get_instances(start=datetime(2019, 1, 10), end=datetime(2019, 1, 11))
 
 # We feed these data_specs to a DataFetcher and see exactly what data our model would receive on the 10th of January
 first_data_spec = data_specs[0]
-data_fetcher = DataFetcher(
-    first_data_spec, api_key=os.getenv("COGNITE_OID_API_KEY"), project="publicdata"
-)
+data_fetcher = DataFetcher(first_data_spec, api_key=os.getenv("COGNITE_OID_API_KEY"), project="publicdata")
 print(data_fetcher.time_series.fetch_datapoints("gas_auto").head())
