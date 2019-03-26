@@ -5,6 +5,11 @@
 Data Fetcher Examples
 =====================
 
+To run these examples you need to set the environment variable
+`COGNITE_OID_API_KEY` to a valid API key for the Open Industrial Data project.
+
+Sign up and get a key at https://openindustrialdata.com/
+
 ### [Using the DataSpec](data_spec.py)
 
 This example shows how to build a data spec and fetch the data it describes.
