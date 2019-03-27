@@ -26,7 +26,7 @@ schedule_data_spec = ScheduleDataSpec(
             "gas_gain": ScheduleInputTimeSeriesSpec(3658191334677419),
         }
     ),
-    output=ScheduleOutputSpec({"transformed": ScheduleOutputTimeSeriesSpec(123)}),
+    output=ScheduleOutputSpec({"transformed": ScheduleOutputTimeSeriesSpec(id_of_output_timeseries)}),
     window_size="1h",  # We will feed our model with 4 data points (since window_size is 1h and granularity is 15m)
     stride="1h",  # This means our schedule will run once an hour
     start=datetime(2019, 1, 1),
