@@ -39,7 +39,7 @@ print(df.head())
 
 
 # When using fetch_dataframe all specified time series must have the same start, end, and granularity
-# So to fetch data for times series with different specs we can use the following method
+# To fetch data from times series with different specs, we can use the following method
 
 dfs = data_fetcher.time_series.fetch_datapoints(["gas_integ_time", "gas_gain"])
 

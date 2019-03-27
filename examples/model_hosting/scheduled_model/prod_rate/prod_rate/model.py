@@ -15,7 +15,7 @@ class Model:
             prediction. This can be serialized models, csv, or something else.
             You just have to be able to store it in files.
         - Static load method
-            Which load your persisted state and return an instance of the Model
+            Which loads your persisted state and return an instance of the Model
             class that are ready for predictions.
         - Predict method
             Which use the persisted state to do predictions.
