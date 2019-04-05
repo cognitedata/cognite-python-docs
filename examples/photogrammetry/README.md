@@ -1,11 +1,7 @@
 # Photogrammetry API
 
-<div class="alert alert-block alert-warning">
-
-<b>
-The Photogrammetry API is highly experimental and some features may not be available or function correctly at the moment. Please use this API with care, as we issue no guarantees this API won't break.
-</b> 
-</div>
+|The Photogrammetry API is highly experimental and some features may not be available or function correctly at the moment. Please use this API with care, as we issue no guarantees this API won't break.|
+| --- |
 
 In this tutorial we will go through how to use Cognite's Photogrammetry API to create contextualised 3D models using images.
 
