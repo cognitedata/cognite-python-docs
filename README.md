@@ -8,8 +8,7 @@ Cognite Python Documentation
 
 Overview
 --------
-Here you can find documentation and examples for all python packages needed for interacting with the
-Cognite Data Platform.
+Here you can find documentation and examples for anything Python related on top of Cognite Data Fusion.
 
 - [Python Documentation](https://cognite-docs.readthedocs-hosted.com/en/latest/)
 
