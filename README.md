@@ -22,7 +22,7 @@ Examples
 
 ### [Basics](examples/basics)
 
-A collection of simple examples to get you started with CDP.
+A collection of simple examples to get you started with CDF.
 
 ### [Model Hosting](examples/model_hosting)
 
