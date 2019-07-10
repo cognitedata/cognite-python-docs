@@ -44,6 +44,17 @@ documentation.
 
 A walkthrough of the concepts in the model hosting environment can be found `here <https://doc.cognitedata.com/dev/concepts/model_hosting/>`__.
 
+`Correlation <https://cognite-docs.readthedocs-hosted.com/projects/cognite-correlation/>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: bash
+
+    $ pip install cognite-correlation
+
+The library contains tools for computing cross correlation between time series data, meant for finding useful relations between data from sensors.
+
+Click `here <https://cognite-docs.readthedocs-hosted.com/projects/cognite-correlation/>`__ to learn more and see the
+documentation.
+
 `Examples <https://github.com/cognitedata/cognite-python-docs>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Examples on using the Cognite Data Platform in Python can be found `here <https://github.com/cognitedata/cognite-python-docs>`__.
