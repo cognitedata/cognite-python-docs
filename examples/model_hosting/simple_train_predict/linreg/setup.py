@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 # It's important to specify all dependencies on external packages,
 # so that these can be installed.
-REQUIRED_PACKAGES = ["pandas>=0.23", "numpy>=1.15", "cognite-model-hosting==0.1.2", "cognite-sdk==0.13.*"]
+REQUIRED_PACKAGES = ["pandas>=0.23", "numpy>=1.15", "cognite-model-hosting==0.1.*", "cognite-sdk==0.13.*"]
 
 
 setup(
