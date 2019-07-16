@@ -1,7 +1,7 @@
 ============================
 Cognite Python Documentation
 ============================
-Documentation for packages used to interact with Cognite Data Platform (CDP)
+Documentation for packages used to interact with Cognite Data Fusion (CDF)
 
 `Software Development Kit <https://cognite-docs.readthedocs-hosted.com/projects/cognite-sdk-python/>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -44,7 +44,7 @@ documentation.
 
 A walkthrough of the concepts in the model hosting environment can be found `here <https://doc.cognitedata.com/dev/concepts/model_hosting/>`__.
 
-`Correlation <https://cognite-docs.readthedocs-hosted.com/projects/cognite-correlation/>`_
+`Correlation <https://cognite-docs.readthedocs-hosted.com/projects/cognite-cognite-correlation/>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
 
