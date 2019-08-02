@@ -1,7 +1,7 @@
 ============================
 Cognite Python Documentation
 ============================
-Documentation for packages used to interact with Cognite Data Platform (CDP)
+Documentation for packages used to interact with Cognite Data Fusion (CDF)
 
 `Software Development Kit <https://cognite-docs.readthedocs-hosted.com/projects/cognite-sdk-python/>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -43,6 +43,17 @@ Click `here <https://cognite-docs.readthedocs-hosted.com/projects/cognite-model-
 documentation.
 
 A walkthrough of the concepts in the model hosting environment can be found `here <https://doc.cognitedata.com/dev/concepts/model_hosting/>`__.
+
+`Correlation <https://cognite-docs.readthedocs-hosted.com/projects/cognite-cognite-correlation/>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: bash
+
+    $ pip install cognite-correlation
+
+The library contains tools for computing cross correlation between time series data, meant for finding useful relations between data from sensors.
+
+Click `here <https://cognite-docs.readthedocs-hosted.com/projects/cognite-correlation/>`__ to learn more and see the
+documentation.
 
 `Examples <https://github.com/cognitedata/cognite-python-docs>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
