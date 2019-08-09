@@ -45,8 +45,8 @@ def generate_data():
 
 def post_data(df):
     time_series_to_post = [TimeSeries(name=name) for name in df.columns if name != "timestamp"]
-    # Create a time series for the CPR
-    time_series_to_post.append(TimeSeries(name="{}_CPR".format(prefix)))
+    # Create a time series for the cpr
+    time_series_to_post.append(TimeSeries(name="{}_cpr".format(prefix)))
 
     client.time_series.post_time_series(time_series_to_post)
 
