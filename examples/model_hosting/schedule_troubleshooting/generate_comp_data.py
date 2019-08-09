@@ -63,5 +63,4 @@ def post_data(df):
 
 if __name__ == "__main__":
     df = generate_data()
-    print(df.tail())
-    #post_data(df)
+    post_data(df)
