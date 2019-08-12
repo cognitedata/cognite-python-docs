@@ -108,3 +108,6 @@ venv.bak/
 
 # artifacts directories created when training
 artifacts
+
+# ds store
+.DS_Store
