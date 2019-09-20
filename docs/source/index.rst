@@ -52,7 +52,7 @@ A walkthrough of the concepts in the model hosting environment can be found `her
 
 The library contains tools for computing cross correlation between time series data, meant for finding useful relations between data from sensors.
 
-Click `here <https://cognite-docs.readthedocs-hosted.com/projects/cognite-replicator/>`__ to learn more and see the
+Click `here <https://cognite-docs.readthedocs-hosted.com/projects/cognite-cognite-correlation/>`__ to learn more and see the
 documentation.
 
 `Replicator <https://cognite-docs.readthedocs-hosted.com/projects/replicator/>`_
