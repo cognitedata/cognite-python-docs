@@ -5,7 +5,7 @@ from time import sleep
 
 import pandas as pd
 from cognite.client import CogniteClient
-from cognite.client.stable.time_series import TimeSeries
+from cognite.client.data_classes.time_series import TimeSeries
 
 client = CogniteClient()
 NUMBER_OF_DATAPOINTS = 20000
@@ -33,9 +33,11 @@ def generate_data():
     one_day_ahead_ms = int(round(one_day_ahead.timestamp() * 1000))
     step = (one_day_ahead_ms - one_day_ago_ms) // NUMBER_OF_DATAPOINTS
 
-    data["timestamp"] = [timestamp for timestamp in range(one_day_ago_ms, one_day_ahead_ms, step)][
+    timestamps = [timestamp for timestamp in range(one_day_ago_ms, one_day_ahead_ms, step)][
         :NUMBER_OF_DATAPOINTS
     ]
+
+    data["timestamps"] = timestamps
     data["{}_temp".format(prefix)] = random_walk(75, 125, NUMBER_OF_DATAPOINTS)
     data["{}_pressure".format(prefix)] = random_walk(150, 300, NUMBER_OF_DATAPOINTS)
     data["{}_rpm".format(prefix)] = random_walk(100, 200, NUMBER_OF_DATAPOINTS)
@@ -46,28 +48,33 @@ def generate_data():
         for i in range(NUMBER_OF_DATAPOINTS)
     ]
 
-    df = pd.DataFrame(data)
-    return df
+    return data
 
 
-def post_data(df):
-    time_series_to_post = [TimeSeries(name=name) for name in df.columns if name != "timestamp"]
+def post_data(data):
+    time_series_to_post = [TimeSeries(name=name) for name in data if name != "timestamps"]
     # Create a time series for the prediction output as well
     time_series_to_post.append(TimeSeries(name="{}_predicted_prod_rate".format(prefix)))
 
-    client.time_series.post_time_series(time_series_to_post)
+    client.time_series.create(time_series_to_post)
 
     created_time_series = []
     while len(created_time_series) != 5:
-        created_time_series = client.time_series.get_time_series(prefix=prefix)
+        created_time_series = client.time_series.search(name=prefix)
         sleep(0.5)
-
-    client.datapoints.post_datapoints_frame(df)
 
     ts_dict = {"_".join(ts.name.split("_")[1:]): ts.id for ts in created_time_series}
     print(ts_dict)
 
+    datapoints = []
+    for ts in created_time_series:
+        if ts.name.endswith("_predicted_prod_rate"):
+            continue
+        datapoints.append({"id": ts.id, "datapoints": list(zip(data["timestamps"], data[ts.name]))})
+    
+    client.datapoints.insert_multiple(datapoints)
+
 
 if __name__ == "__main__":
-    df = generate_data()
-    post_data(df)
+    data = generate_data()
+    post_data(data)

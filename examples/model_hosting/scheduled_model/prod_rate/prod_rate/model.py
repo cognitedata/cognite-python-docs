@@ -45,7 +45,7 @@ class Model:
         Note that it's also possible to take api_key and project in as
         optional arguments here.
         """
-        dts = DataFetcher(instance)
+        dts = DataFetcher(instance, client_name="prod-rate-client")
         df = dts.time_series.fetch_dataframe(["temp", "pressure", "rpm"]).dropna()
 
         X = df[["temp", "pressure", "rpm"]].values
@@ -58,4 +58,4 @@ class Model:
         # }
         # We can use a model hosting utilities method to convert our dataframe
         # to this format.
-        return to_output(df[["timestamp", "production_rate"]])
+        return to_output(df[["production_rate"]])
