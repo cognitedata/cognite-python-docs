@@ -8,8 +8,8 @@ class Model:
         return Model()
 
     def predict(self, instance):
-        data_fetcher = DataFetcher(instance)
+        data_fetcher = DataFetcher(instance, client_name="cprfix-client")
         df = data_fetcher.time_series.fetch_dataframe(["x1", "x2"])
         df["y"] = df["x2"] / df["x1"]
 
-        return to_output(df[["y", "timestamp"]])
+        return to_output(df[["y"]])
