@@ -30,7 +30,9 @@ data_spec = DataSpec(
 
 
 # Now lets fetch the data for our "gas_auto" and "gas_external" time series
-data_fetcher = DataFetcher(data_spec, api_key=os.getenv("COGNITE_OID_API_KEY"), project="publicdata", client_name="test-client")
+data_fetcher = DataFetcher(
+    data_spec, api_key=os.getenv("COGNITE_OID_API_KEY"), project="publicdata", client_name="test-client"
+)
 
 
 df = data_fetcher.time_series.fetch_dataframe(["gas_auto", "gas_external"])

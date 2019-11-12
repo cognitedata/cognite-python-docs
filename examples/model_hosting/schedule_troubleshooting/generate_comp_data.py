@@ -62,7 +62,7 @@ def post_data(data):
         if ts.name.endswith("_cpr"):
             continue
         datapoints.append({"id": ts.id, "datapoints": list(zip(data["timestamps"], data[ts.name]))})
-    
+
     client.datapoints.insert_multiple(datapoints)
 
 

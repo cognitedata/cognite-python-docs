@@ -33,9 +33,7 @@ def generate_data():
     one_day_ahead_ms = int(round(one_day_ahead.timestamp() * 1000))
     step = (one_day_ahead_ms - one_day_ago_ms) // NUMBER_OF_DATAPOINTS
 
-    timestamps = [timestamp for timestamp in range(one_day_ago_ms, one_day_ahead_ms, step)][
-        :NUMBER_OF_DATAPOINTS
-    ]
+    timestamps = [timestamp for timestamp in range(one_day_ago_ms, one_day_ahead_ms, step)][:NUMBER_OF_DATAPOINTS]
 
     data["timestamps"] = timestamps
     data["{}_temp".format(prefix)] = random_walk(75, 125, NUMBER_OF_DATAPOINTS)
@@ -71,7 +69,7 @@ def post_data(data):
         if ts.name.endswith("_predicted_prod_rate"):
             continue
         datapoints.append({"id": ts.id, "datapoints": list(zip(data["timestamps"], data[ts.name]))})
-    
+
     client.datapoints.insert_multiple(datapoints)
 
 
