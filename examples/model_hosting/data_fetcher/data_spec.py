@@ -13,24 +13,24 @@ granularity = "1m"
 data_spec = DataSpec(
     time_series={
         "gas_auto": TimeSeriesSpec(
-            5168669678602879, start=start, end=end, aggregate=aggregate, granularity=granularity
+            id=5168669678602879, start=start, end=end, aggregate=aggregate, granularity=granularity
         ),
         "gas_external": TimeSeriesSpec(
-            6811013084414704, start=start, end=end, aggregate=aggregate, granularity=granularity
+            id=6811013084414704, start=start, end=end, aggregate=aggregate, granularity=granularity
         ),
         "gas_delta_time": TimeSeriesSpec(
-            6894532287305357, start=start, end=end, aggregate=aggregate, granularity=granularity
+            id=6894532287305357, start=start, end=end, aggregate=aggregate, granularity=granularity
         ),
         "gas_integ_time": TimeSeriesSpec(
-            4988486819178408, start=start, end=end, aggregate=aggregate, granularity=granularity
+            id=4988486819178408, start=start, end=end, aggregate=aggregate, granularity=granularity
         ),
-        "gas_gain": TimeSeriesSpec(3658191334677419, start=start, end=end),
+        "gas_gain": TimeSeriesSpec(id=3658191334677419, start=start, end=end),
     }
 )
 
 
 # Now lets fetch the data for our "gas_auto" and "gas_external" time series
-data_fetcher = DataFetcher(data_spec, api_key=os.getenv("COGNITE_OID_API_KEY"), project="publicdata")
+data_fetcher = DataFetcher(data_spec, api_key=os.getenv("COGNITE_OID_API_KEY"), project="publicdata", client_name="test-client")
 
 
 df = data_fetcher.time_series.fetch_dataframe(["gas_auto", "gas_external"])
