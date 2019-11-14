@@ -66,6 +66,7 @@ def post_data(data):
 
     datapoints = []
     for ts in created_time_series:
+        # Only add datapoints to the input time series, i.e. skip the predicted_prod_rate timeseries.
         if ts.name.endswith("_predicted_prod_rate"):
             continue
         datapoints.append({"id": ts.id, "datapoints": list(zip(data["timestamps"], data[ts.name]))})

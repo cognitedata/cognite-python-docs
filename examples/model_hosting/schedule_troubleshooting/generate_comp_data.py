@@ -59,6 +59,7 @@ def post_data(data):
 
     datapoints = []
     for ts in created_time_series:
+        # Only add datapoints to the input time series, i.e. skip the cpr timeseries.
         if ts.name.endswith("_cpr"):
             continue
         datapoints.append({"id": ts.id, "datapoints": list(zip(data["timestamps"], data[ts.name]))})
