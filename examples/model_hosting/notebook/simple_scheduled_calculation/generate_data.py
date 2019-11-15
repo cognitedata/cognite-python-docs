@@ -6,7 +6,7 @@ from time import sleep
 import numpy as np
 import pandas as pd
 from cognite.client import CogniteClient
-from cognite.client.stable.time_series import TimeSeries
+from cognite.client.data_classes.time_series import TimeSeries
 
 
 def random_sequence(n, minimum, maximum, variability, shift_ratio):
@@ -33,11 +33,11 @@ def generate_data():
     end = int((datetime.now() + timedelta(hours=4)).timestamp() * 1000)
 
     data = {}
-    data["timestamp"] = np.array(range(start, end, 1000))
-    data["x"] = random_sequence(len(data["timestamp"]), 260, 350, 0.05, 0.001)
-    data["y"] = random_sequence(len(data["timestamp"]), 150, 300, 0.01, 0.005)
+    timestamp = np.array(range(start, end, 1000))
+    data["x"] = random_sequence(len(timestamp), 260, 350, 0.05, 0.001)
+    data["y"] = random_sequence(len(timestamp), 150, 300, 0.01, 0.005)
 
-    return pd.DataFrame(data)
+    return pd.DataFrame(data, index=timestamp)
 
 
 def post_data(df):
@@ -46,15 +46,16 @@ def post_data(df):
     df.rename(columns=ts_names, inplace=True)
 
     client = CogniteClient()
-    client.time_series.post_time_series([TimeSeries(name=name) for name in df.columns if name != "timestamp"])
-    client.time_series.post_time_series([TimeSeries(name="tutorial_{}_mean_x_y".format(prefix))])
+    client.time_series.create([TimeSeries(name=name, external_id=name) for name in df.columns])
+    output_ts_name = "tutorial_{}_mean_x_y".format(prefix)
+    client.time_series.create([TimeSeries(name=output_ts_name, external_id=output_ts_name)])
 
     created_time_series = []
     while len(created_time_series) != 3:
-        created_time_series = client.time_series.get_time_series(prefix="tutorial_" + prefix)
+        created_time_series = client.time_series.search(name="tutorial_" + prefix)
         sleep(0.5)
 
-    client.datapoints.post_datapoints_frame(df)
+    client.datapoints.insert_dataframe(df, external_id_headers=True)
 
     ts_ids = {ts.name.split("_", 2)[-1]: ts.id for ts in created_time_series}
     return ts_ids

@@ -39,5 +39,7 @@ data_specs = schedule_data_spec.get_instances(start=datetime(2019, 1, 10), end=d
 
 # We feed these data_specs to a DataFetcher and see exactly what data our model would receive on the 10th of January
 first_data_spec = data_specs[0]
-data_fetcher = DataFetcher(first_data_spec, api_key=os.getenv("COGNITE_OID_API_KEY"), project="publicdata")
+data_fetcher = DataFetcher(
+    first_data_spec, api_key=os.getenv("COGNITE_OID_API_KEY"), project="publicdata", client_name="test-client"
+)
 print(data_fetcher.time_series.fetch_datapoints("gas_auto").head())
