@@ -5,7 +5,7 @@
 Basic Examples
 ==============
 
-### [Learn to use CDP](Learn%20to%20use%20CDP.ipynb)
+### [Learn to use CDF](Learn%20to%20use%20CDF.ipynb)
 
 Simple Jupyter notebook which introduces some of the main concepts of the Cognite Data Platform. The notebook fetches, visualizes, and navigates some data from the [Open Industrial Data](https://openindustrialdata.com/) collection. An API key can be obtained from the Open Industrial Data web site.
 

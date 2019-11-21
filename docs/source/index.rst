@@ -9,7 +9,7 @@ Documentation for packages used to interact with Cognite Data Fusion (CDF)
 
     $ pip install cognite-sdk
 
-This package provides an interface to CDP in Python that is tightly integrated with Pandas.
+This package provides an interface to CDF in Python that is tightly integrated with Pandas.
 It lets you work with all the data in the platform in a simple and efficient manner.
 
 Click `here <https://cognite-docs.readthedocs-hosted.com/projects/cognite-sdk-python/>`__ to learn more and see the
