@@ -50,15 +50,16 @@ def generate_data():
 
 
 def post_data(data):
-    time_series_to_post = [TimeSeries(name=name) for name in data if name != "timestamps"]
+    time_series_to_post = [TimeSeries(name=name, external_id=name) for name in data if name != "timestamps"]
     # Create a time series for the prediction output as well
-    time_series_to_post.append(TimeSeries(name="{}_predicted_prod_rate".format(prefix)))
+    name = "{}_predicted_prod_rate".format(prefix)
+    time_series_to_post.append(TimeSeries(name=name, external_id=name))
 
     client.time_series.create(time_series_to_post)
 
     created_time_series = []
     while len(created_time_series) != 5:
-        created_time_series = client.time_series.search(name=prefix)
+        created_time_series = client.time_series.list(external_id_prefix=prefix)
         sleep(0.5)
 
     ts_dict = {"_".join(ts.name.split("_")[1:]): ts.id for ts in created_time_series}
